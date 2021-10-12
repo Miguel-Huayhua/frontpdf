@@ -23,7 +23,7 @@
           </span>
           <input
             class="form-control"
-            name="apellidos"
+            name="apellido"
             id="apellidos"
             type="text"
             placeholder="Introduzca sus apellidos"
@@ -62,7 +62,7 @@
       </div>
       <input class="btn btn-secondary" type="submit" value="Generar Carta " />
     </form>
-      <a href="https://pdf-generatormike.herokuapp.com/download" v-if="done">
+      <a href="https://pdfmike.herokuapp.com/" v-if="done">
         Puedes descargarlo acá :)</a
       >
   </div>
@@ -108,7 +108,7 @@ export default {
       let form = new FormData(this.$refs.form);
       axios({
         method: "post",
-        url: "https://pdf-generatormike.herokuapp.com/file",
+        url: "https://pdfmike.herokuapp.com/file",
         data: form,
         headers: { "Content-Type": "multipart/form-data" },
       }).then((val) => {
