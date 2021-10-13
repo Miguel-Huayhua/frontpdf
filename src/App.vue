@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form class="row mb-5" ref="form" @submit.prevent="submit">
+    <form class="row mb-5" v-on:submit.prevent="submit" ref="form">
       <div class="col-12 col-md-8 mb-3">
         <div class="input-group">
           <span class="input-group-text">
@@ -23,7 +23,7 @@
           </span>
           <input
             class="form-control"
-            name="apellidos"
+            name="apellido"
             id="apellidos"
             type="text"
             placeholder="Introduzca sus apellidos"
@@ -62,9 +62,7 @@
       </div>
       <input class="btn btn-secondary" type="submit" value="Generar Carta " />
     </form>
-      <a href="https://pdf-generatormike.herokuapp.com/download" v-if="done">
-        Puedes descargarlo acá :)</a
-      >
+    <a href="http://localhost:3000" v-if="done"> Puedes descargarlo acá :)</a>
   </div>
 </template>
 
@@ -101,16 +99,17 @@ export default {
         alert("coloque un archivo de tipo imagen");
       }
     },
-    click() {
-      console.log(this.$refs.file);
-    },
     submit() {
-      let form = new FormData(this.$refs.form);
+      let data = new FormData(this.$refs.form);
+      console.log(data.get("myfile"));
+
       axios({
         method: "post",
-        url: "https://pdf-generatormike.herokuapp.com/file",
-        data: form,
-        headers: { "Content-Type": "multipart/form-data" },
+        url: "http://localhost:3000/file",
+        data,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       }).then((val) => {
         this.done = val.data.done;
       });
@@ -173,5 +172,4 @@ a {
   color: #2c3e50;
   font-size: 1.2em;
 }
-
 </style>
