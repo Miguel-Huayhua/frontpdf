@@ -62,7 +62,7 @@
       </div>
       <input class="btn btn-secondary" type="submit" value="Generar Carta " />
     </form>
-    <a href="http://localhost:3000" v-if="done"> Puedes descargarlo acá :)</a>
+    <a href="https://pdfmike.herokuapp.com/" v-if="done"> Puedes descargarlo acá :)</a>
   </div>
 </template>
 
@@ -105,7 +105,7 @@ export default {
 
       axios({
         method: "post",
-        url: "http://localhost:3000/file",
+        url: "https://pdfmike.herokuapp.com/file",
         data,
         headers: {
           "Content-Type": "multipart/form-data",
