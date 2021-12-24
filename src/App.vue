@@ -1,7 +1,8 @@
 <template>
   <div class="container">
-  <h3>MODO DE PRUEBA, CON TAL DE QUE SE GENERE LO QUE QUIERO, ESTÁ BIEN, FELIZ NAVIDAD</h3>
-  
+  <h3>HOLA!!, BIENVENID@, ESTE MEDIO ES MI FORMA DE DARTE UN MENSAJE DE REGALO, ESPERO QUE TE GUSTE, GRACIAS.!!!</h3>
+    <h5>Los campos irán a la carta, solo colocalo y genéralo...</h5>
+
     <form class="row mb-5" v-on:submit.prevent="submit" ref="form">
       <div class="col-12 col-md-8 mb-3">
         <div class="input-group">
