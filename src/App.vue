@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-  MODO DE PRUEBA, CON TAL DE QUE SE GENERE LO QUE QUIERO, ESTÁ BIEN, FELIZ NAVIDAD
+  <h3>MODO DE PRUEBA, CON TAL DE QUE SE GENERE LO QUE QUIERO, ESTÁ BIEN, FELIZ NAVIDAD</h3>
   
     <form class="row mb-5" v-on:submit.prevent="submit" ref="form">
       <div class="col-12 col-md-8 mb-3">
@@ -33,7 +33,6 @@
         </div>
       </div>
        
-      </div>
       <input class="btn btn-secondary" type="submit" value="Generar Carta " />
     </form>
     <a href="https://regalonavidad.herokuapp.com" v-if="done"> Puedes descargarlo acá :)</a>
