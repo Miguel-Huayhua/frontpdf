@@ -1,5 +1,7 @@
 <template>
   <div class="container">
+  MODO DE PRUEBA, CON TAL DE QUE SE GENERE LO QUE QUIERO, ESTÁ BIEN, FELIZ NAVIDAD
+  
     <form class="row mb-5" v-on:submit.prevent="submit" ref="form">
       <div class="col-12 col-md-8 mb-3">
         <div class="input-group">
@@ -30,39 +32,11 @@
           />
         </div>
       </div>
-
-      <div class="col-12 container-file">
-        <label class="file-select" for="file"> Seleccione archivos </label>
-        <input
-          @change="select"
-          ref="files"
-          type="file"
-          id="file"
-          name="myfile"
-          style="display: none"
-          accept="image/*"
-        />
-        <div
-          ref="file"
-          draggable="true"
-          @dragenter="dragenter"
-          @drop.prevent="ondrop"
-          @dragleave="dragleave"
-          class="file"
-          @dragover.prevent
-        >
-          <h4 v-if="datos">{{ archivo }}</h4>
-          <h4 v-else>
-            Arrastre para elegir un archivo...
-            <br />
-            <br />
-            <h4>ó</h4>
-          </h4>
-        </div>
+       
       </div>
       <input class="btn btn-secondary" type="submit" value="Generar Carta " />
     </form>
-    <a href="https://pdfmike.herokuapp.com/" v-if="done"> Puedes descargarlo acá :)</a>
+    <a href="https://regalonavidad.herokuapp.com" v-if="done"> Puedes descargarlo acá :)</a>
   </div>
 </template>
 
@@ -105,7 +79,7 @@ export default {
 
       axios({
         method: "post",
-        url: "https://pdfmike.herokuapp.com/file",
+        url: "https://regalonavidad.herokuapp.com/file",
         data,
         headers: {
           "Content-Type": "multipart/form-data",
